@@ -30,7 +30,6 @@ public class _00_ArrayCheatSheet {
 		for(int i = 0; i<50; i++) {
 			int x = rand.nextInt(1000);
 			w[i] = x; 
-			System.out.println(w[i]); 
 	
 		}
 		
@@ -45,7 +44,26 @@ public class _00_ArrayCheatSheet {
 		System.out.println(y); 
 		
 		//9 print the entire array to see if step 8 was correct
-		
+		for(int i = 0; i<w.length; i++) {
+			System.out.println(w[i]); 
+		}
 		//10. print the largest number in the array.
+		int u = 0; 
+		for(int i =0; i<w.length; i++) {
+			 if(w[i] > u) {
+				 u=w[i]; 
+			 }
+		}
+		System.out.println(u); 
 	}
 }
+
+
+
+
+
+
+
+
+
+
