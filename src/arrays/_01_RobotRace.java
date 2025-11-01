@@ -16,39 +16,37 @@ public class _01_RobotRace {
 		// 3. use a for loop to initialize the robots.
 		for (int i = 0; i < rob.length; i++) {
 			rob[i] = new Robot();
-			rob[i].setY(550);
-			rob[i].setSpeed(5);
+			rob[i].setY(800);
+			rob[i].setSpeed(50);
 		}
 
 		// 4. make each robot start at the bottom of the screen, side by side, facing up
 		
-		rob[0].setX(50);
-		rob[1].setX(150);
-		rob[2].setX(250);
-		rob[3].setX(350);
-		rob[4].setX(450);
-		rob[5].setX(550);
-		rob[6].setX(650);
-		rob[7].setX(750);
-		rob[8].setX(850);
-		rob[9].setX(950);
+		for(int i = 0; i<rob.length; i++) {
+			rob[i].setX(500); 
+			rob[i].turn(90);
+		}
+		
 
 		// 5. use another for loop to iterate through the array and make each robot move
 		// a random amount less than 50.
 		Random rand = new Random();
 		boolean y = true;
 		int winningRobot = 0;
+		int w = 0; 
+		int[] p = new int[rob.length]; 
 
 		while (y) {
 			for (int i = 0; i < rob.length; i++) {
-				int x = rand.nextInt(50);
-				rob[i].move(x);
-				for(int m = 1; m<360; m+=100) {
-					rob[i].setAngle(m);
+				//int x = rand.nextInt(50);
+				if (rand.nextBoolean()) {
+					rob[i].move(200);
+					rob[i].turn(-30);
+					p[i]++; 
 				}
-				if (rob[i].getY() < 50) {
+				if (p[i]==12) {
 					y = false;
-					winningRobot = i + 1;
+					winningRobot = i;
 					break; 
 				}
 			}
