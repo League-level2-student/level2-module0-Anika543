@@ -60,8 +60,8 @@ public class _03_VanGogh extends PApplet {
     
     void initializePaintings() {
         images = new PImage[4]; 
-        images[0] = loadImage("nightSky.jpg"); 
-        images[1] = loadImage("images/painterOnRaod.jpg");
+        images[0] = loadImage("images/starryNight.jpg"); 
+        images[1] = loadImage("images/painterOnRoad.jpg");
         images[2] = loadImage("images/strawHatPortrait.jpg"); 
         images[3] = loadImage("images/wheatField.jpg");
         
@@ -70,8 +70,10 @@ public class _03_VanGogh extends PApplet {
     }
     
     void selectNextPainting() {
-
-    }
+    	a++; 
+    	a%=4; 
+    	
+    	brush.setNewPainting(images[a]);  }
 
     @Override
     public void settings() {
